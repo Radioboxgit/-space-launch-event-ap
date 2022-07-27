@@ -67,7 +67,7 @@ async def post_event( events: List[launch_pydantic_in]):
 
 
 @app.delete("/event",tags=["Events"])
-async def delete_user(id: str):
+async def delete_event(id: str):
     deleted_count = await Launch.filter(reference_id=id).delete()
     return deleted_count
 
