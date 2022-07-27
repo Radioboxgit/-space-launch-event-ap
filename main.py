@@ -60,7 +60,7 @@ async def post_event( event: launch_pydantic_in):
 
 
 @app.post("/events", response_model=List[launch_Pydantic],status_code=201,tags=["Events"])
-async def post_event( events: List[launch_pydantic_in]):
+async def post_events( events: List[launch_pydantic_in]):
     '''create multiple events at a go.'''
     events_object=[await Launch.create(**event.dict(exclude_unset=True)) for event in events]
     return events_object
